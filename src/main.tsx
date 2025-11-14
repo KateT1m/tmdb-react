@@ -9,7 +9,6 @@ import AuthPage from "./pages/AuthPage";
 import ProfilePage from "./pages/ProfilePage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Header from "./components/Header";
-import RedirectRecovery from "./components/RedirectRecovery";
 
 import "./index.css";
 
@@ -17,7 +16,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <RedirectRecovery />
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
