@@ -5,14 +5,7 @@ import {
   Select,
   TextField,
 } from "@mui/material";
-
-export interface IControlItem {
-  label: string;
-  value: string | number;
-  onChange: (value: string | number) => void;
-  controlType: "text" | "select";
-  menuItems?: { value: string; label: string }[];
-}
+import { IControlItem } from "../types/types";
 
 interface IControlPanelProps {
   items: IControlItem[];
@@ -35,7 +28,7 @@ const ControlPanel: React.FC<IControlPanelProps> = ({ items }) => {
             <Select
               value={item.value}
               label={item.label}
-              onChange={(e) => item.onChange(e.target.value)}
+              onChange={(e) => item.onChange(e.target.value as string)}
             >
               {item.menuItems?.map((menuItem) => (
                 <MenuItem key={menuItem.value} value={menuItem.value}>

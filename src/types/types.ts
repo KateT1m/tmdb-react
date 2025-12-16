@@ -40,3 +40,16 @@ export interface MoviesQueryParams {
   language?: string;
   sort_by?: string;
 }
+
+export interface IMenuItem {
+  value: string;
+  label: string;
+}
+
+export interface IControlItem {
+  label: string;
+  value: string | number;
+  onChange: (value: string) => void;
+  controlType: "text" | "select";
+  menuItems?: IMenuItem[];
+}
